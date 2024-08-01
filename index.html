@@ -1,0 +1,51 @@
+<!--
+index.html
+Jacob Cunitz (z1929689)
+CSCI 490 - 00N9 Project 1
+Profeesor - Dr. Maoyuan Sun
+-->
+
+<!DOCTYPE html>
+
+<head>
+    <p>Jacob Cunitz (z1929689) - CSCI 490-00N9 Project 1 </p>
+    <p>To generate a matrix, put in the desired rows and columns, and check the box if you would like
+        random colors, or not for the matrix to be blank. Then click submit to generate the matrix.
+        If the matrix has been randomized and you would
+        like to sort the rows, click the "Click to Sort Rows" button to sort them. Trying to generate a
+        new matrix will overwrite the previous one.
+    </p>
+    <script src="https://d3js.org/d3.v6.min.js"></script> 
+
+    <!-- Make page a little larger to fit larger matrices-->
+    <style>
+        #matrix_container {
+            width: 300%;
+            height: 500vh;
+            overflow: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <form id ="myform">
+        <label for="rows">Rows: </label>
+        <input type="text" id="rows">
+        <label for="columns">Columns: </label>
+        <input type="text" id="columns">
+       
+        <input type="checkbox" id="random" name = "Randomize">
+        <label for="random">Generate Random Values & Colors For Each Cell</label><br>
+        <input type="submit" value="submit">
+    </form><br>
+
+    <button onclick="sortarray()">Click to Sort Rows</button><br>
+
+    <br>
+    <div id="matrix_container">
+        <svg id="array" style="overflow: visible"></svg>   
+    </div>
+    
+</body>
+
+<script type="text/javascript" src="matrix.js"></script>
